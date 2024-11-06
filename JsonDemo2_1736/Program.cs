@@ -27,7 +27,20 @@ namespace JsonDemo2_1736
                     TotalRatioValue=10,
                     FunctionCode="I",
                     TradeStatus="成功",
-                    SecuritiesReturnStatus="已還券"
+                    SecuritiesReturnStatus="已還券",
+                    CollateralDetailsInfo=new List<CollateralDetails>
+                    {
+                        new CollateralDetails
+                        {
+                            Date="2024/11/06",
+                            CollateralSerialNumber="2",
+                            CollateralType="信用擔保",
+                            BankSerialNumber="802",
+                            SBroker="HSBC",
+                            SourceAccount="1234567",
+                            ChangedQuantity="50"
+                        }
+                    }
                 },
                 List=new List<PurchasedCollateralList>
                 {
@@ -49,20 +62,8 @@ namespace JsonDemo2_1736
                         Id=4,
                         Date="20240905"
                     }
-                },
-                CollateralInformation=new List<CollateralDetails>
-                {
-                    new CollateralDetails
-                    {
-                        Date="2024/09/05",
-                        CollateralSerialNumber="2",
-                        CollateralType="現金",
-                        BankSerialNumber="50677",
-                        SBroker=" HSBC",
-                        SourceAccount="012",
-                        ChangedQuantity="50"
-                    }
                 }
+
             };
             string Json = JsonConvert.SerializeObject(All, Formatting.Indented);
             Console.WriteLine(Json);
@@ -76,7 +77,9 @@ namespace JsonDemo2_1736
             Console.WriteLine($"擔保日期:{AllData.SearchInformation.CollateralDate}");
             Console.WriteLine($"投資人帳號:{AllData.SearchInformation.Account}");
             Console.WriteLine($"成交狀態:{AllData.SearchInformation.TransactionStatus}");
-            Console.WriteLine($"還券狀態:{AllData.SearchInformation.SecuritiesReturnStatus}");       
+            Console.WriteLine($"還券狀態:{AllData.SearchInformation.SecuritiesReturnStatus}");     
+            
         }
     }
 }
+//如果要反序列化list要使用迴圈ex: foreach (var a in AllData.List)

@@ -62,5 +62,9 @@ namespace JsonDemo2_1736
         /// 還券狀態
         /// </summary>
         public string SecuritiesReturnStatus { get; set; }
+        /// <summary>
+        /// 交易資訊明細
+        /// </summary>
+        public List<CollateralDetails> CollateralDetailsInfo { get; set; }
     }
 }

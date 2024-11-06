@@ -23,9 +23,6 @@ namespace JsonDemo2_1736
         /// 投資人擔保品清單區
         /// </summary>
         public List<PurchasedCollateralList> List { get; set; }
-        /// <summary>
-        /// 擔保品明細區
-        /// </summary>
-        public List<CollateralDetails> CollateralInformation { get; set; }
+     
     }
 }
